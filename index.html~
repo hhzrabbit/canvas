@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/logreg.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    {% block head %}
+    {% endblock %}
+    
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/">Pic of the Day</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="top-nav
+						  ">
+	  <ul class="nav navbar-nav">
+	    {% block leftnav %}
+	    {% endblock %}
+	  </ul>
+
+
+	  <ul class="nav navbar-nav navbar-right">
+	    {% block rightnav %}
+	    {% endblock %}
+	  </ul>
+
+	</div>
+      </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+  </body>
+
+</html>
