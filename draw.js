@@ -13,8 +13,8 @@ var drawRect = function(e){
 		  "#FF00FF", "#FF00BF", "#FF0080", "#FF0040" //pinkish
 		  ];
     
-    var x = event.clientX - 20 - c.offsetLeft;
-    var y = event.clientY - 20 - c.offsetTop;
+    var x = e.offsetX - 10;
+    var y = e.offsetY - 10;
     
     ctx.fillStyle = colors[ parseInt(y / 20) ] ;
 
