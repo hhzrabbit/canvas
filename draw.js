@@ -1,19 +1,24 @@
 var c = document.getElementById("canvas")
 var ctx = c.getContext("2d")
+var button = document.getElementById("clear-btn")
 
 var drawRect = function(e){
-  /*  var colors = ["#FF0000", 
-		  "#FF8000", 
-		  "#FFFF00", 
-		  "#00FF00", 
-		  "#0000FF", 
-		  "#8000FF" ];
-*/    
-    var x = event.clientX;
-    var y = event.clientY;
- //   ctx.fillStyle( colors[0] );
-    ctx.fillStyle("#ff0000");
-    ctx.fillRect( x - 20, y - 20, 20, 20 );
+    
+    var colors = ["#FF0000", //red
+		  "#FF4000", "#FF8000", "#FFBF00", //orangeish
+		  "#FFFF00", //yellow
+		  "#BFFF00", "#80FF00", "#40FF00", "#00FF00", "#00FF40", "#00FF80", //greenish
+		  "#00FFBF", "#00FFFF",  "#00BFFF", "#0080FF", "#0040FF"," #0000FF", "#4000FF", //blusih
+		  "#8000FF", "#BF00FF", //purpleish
+		  "#FF00FF", "#FF00BF", "#FF0080", "#FF0040" //pinkish
+		  ];
+    
+    var x = event.clientX - 20 - c.offsetLeft;
+    var y = event.clientY - 20 - c.offsetTop;
+    
+    ctx.fillStyle = colors[ parseInt(y / 20) ] ;
+
+    ctx.fillRect( x, y, 20, 20 );
 }
 
 var clear = function(e){
@@ -22,3 +27,5 @@ var clear = function(e){
 }
 
 c.addEventListener("click", drawRect);
+button.addEventListener("click", clear);
+
